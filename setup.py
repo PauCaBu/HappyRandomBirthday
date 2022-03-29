@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='HappyRandomBirthday',
-    version='0.2',
+    version='0.3',
     packages=find_packages(),
     author="Pola y Raza",
     description="Virtual Random Birthday cards",
