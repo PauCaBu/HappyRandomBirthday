@@ -3,6 +3,7 @@ import urllib.request
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import matplotlib.colors as mcolors
+import os 
 
 class Person(object):
     def __init__(self):
@@ -149,9 +150,17 @@ class Attributes(Person):
         i = np.random.randint(len(links))
         opener = urllib.request.URLopener()
         opener.addheader('User-Agent', 'whatever')
-        filename, headers = opener.retrieve(links[i], "./cute_images/cute_{}.jpg".format(i))
-    
-        img = mpimg.imread("./cute_images/cute_{}.jpg".format(i))
+        path_hrb = './HappyRandomBirthday/cute_images/'
+
+        if (os.path.exist(path_hrb)==False):
+            os.mkdir(path_hrb)
+            pass
+
+        filename, headers = opener.retrieve(links[i],path_hrb + "cute_{}.jpg".format(i))
+
+
+
+        img = mpimg.imread(path_hrb + "cute_{}.jpg".format(i))
         
         cute_img = plt.figure(figsize = (15,15)) 
         ax = plt.subplot(111)
