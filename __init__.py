@@ -150,9 +150,9 @@ class Attributes(Person):
         i = np.random.randint(len(links))
         opener = urllib.request.URLopener()
         opener.addheader('User-Agent', 'whatever')
-        path_hrb = './HappyRandomBirthday/cute_images/'
+        path_hrb = './cute_images/'
 
-        if (os.path.exist(path_hrb)==False):
+        if (os.path.isdir(path_hrb)==False):
             os.mkdir(path_hrb)
             pass
 
