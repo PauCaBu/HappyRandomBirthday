@@ -149,9 +149,9 @@ class Attributes(Person):
         i = np.random.randint(len(links))
         opener = urllib.request.URLopener()
         opener.addheader('User-Agent', 'whatever')
-        filename, headers = opener.retrieve(links[i], ".././cute_images/cute_{}.jpg".format(i))
+        filename, headers = opener.retrieve(links[i], "./cute_images/cute_{}.jpg".format(i))
     
-        img = mpimg.imread(".././cute_images/cute_{}.jpg".format(i))
+        img = mpimg.imread("./cute_images/cute_{}.jpg".format(i))
         
         cute_img = plt.figure(figsize = (15,15)) 
         ax = plt.subplot(111)
